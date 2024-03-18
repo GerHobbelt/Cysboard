@@ -160,11 +160,13 @@ typedef __int64          intmax_t;
 #endif
 
 // Check if exceptions are disabled.
+#ifndef FMT_EXCEPTIONS
 #if defined(__GNUC__) && !defined(__EXCEPTIONS)
 # define FMT_EXCEPTIONS 0
 #endif
 #if defined(_MSC_VER) && !_HAS_EXCEPTIONS
 # define FMT_EXCEPTIONS 0
+#endif
 #endif
 #ifndef FMT_EXCEPTIONS
 # define FMT_EXCEPTIONS 1

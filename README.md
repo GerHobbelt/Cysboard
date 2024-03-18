@@ -1,10 +1,12 @@
-Cysboard 
-=========
+# Cysboard 
+
+
 A lightweight system monitor similar to conky but with html and css for themes
 
 <img src="https://travis-ci.org/mike168m/Cysboard.svg?branch=master"/>
 
 ## Usage
+
 1. Create a theme file called main.html in ~/.config/cysboard/ (There must be a file name 'main.html').
 2. Add your html code with any of the listed ids below in html tags for device info.
 3. Run cysboard.
@@ -12,6 +14,7 @@ A lightweight system monitor similar to conky but with html and css for themes
 If a 'main.html' file does not exist in the config directory cysboard will start with a default theme.
 
 ## Compiling  
+
 You must have cmake >= 3.1 and gcc >= 5.4 in order to compile
 
 1. mkdir build
@@ -20,6 +23,7 @@ You must have cmake >= 3.1 and gcc >= 5.4 in order to compile
 
 
 ## Examples
+
 <div align=center>
 <img src="https://cloud.githubusercontent.com/assets/3809183/22609448/dd8ce142-ea26-11e6-845d-a6d67f8a1bd1.png" />
 <img src="https://cloud.githubusercontent.com/assets/3809183/22609058/38ead604-ea25-11e6-9781-ad25d0be30cb.png" />
@@ -77,9 +81,11 @@ Use ids like the following
 </body>
 </html>
 ```
+
 Please see sources/resources/default.html for a working theme. 
 
 ## IDs
+
 A list of currently supported information from sources. Add any of
 them as an *id* attribute for a tag in your theme file.
 
@@ -113,15 +119,18 @@ mul             | Display value in MB, KB or GB     | mem_free, mem_used, mem_sw
 cmd             | Path of program to execute        | exec_#
 
 ## Project structure
+
 The source code for the project is located in the source directory.
 The header file `cysboard.h` contains the main update function for the program. 
 Objects for information from or about the cpu, os, memory and others are initialized in this class. 
 All the other files house classes for gathering information from various sources. For example `cpuinfo_linux.cpp` has functions for gathering cpu info on a system. The header file `util.h` holds functions for common and repetitive tasks. 
 
 ## Known Issues
+
 1. Program crashes sometimes when editing themes.
 
 ## Todo
+
 1. GPU, Disk and Network information.
 2. Add graph and bar controls like conky. 
 3. Run commands from theme file.
